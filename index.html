@@ -64,7 +64,6 @@ body {
 }
 
 #plot {
-  width: 50%;
   max-width: 100%;
   text-align: left;
   margin: auto;
@@ -178,9 +177,10 @@ var layout = {
  }
 };
 
+var config = {responsive: true}
 
 var data = [solarangles, todaysmarker];
-Plotly.newPlot('plot', data);
+Plotly.newPlot('plot', data, config);
 
 document.getElementById('blaa').innerHTML = day_string + ": auringon kulma " + real_angles[day_of_year] + " astetta.";
 
