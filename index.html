@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Patua+One&family=Vidaloka" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-2.8.3.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.29.1.min.js"></script>
   <link rel="icon" href="logo.png">
 <style>
 
@@ -74,6 +74,7 @@ body {
   max-width: 70%;
 }
 
+
 #daycanvas {
   padding: 0;
   margin: auto;
@@ -119,6 +120,9 @@ var civil_ends = ['16:03', '16:05', '16:06', '16:08', '16:09', '16:11', '16:13',
 
 var solar_noons = ['12:20', '12:20', '12:21', '12:21', '12:22', '12:22', '12:23', '12:23', '12:24', '12:24', '12:24', '12:25', '12:25', '12:26', '12:26', '12:26', '12:27', '12:27', '12:27', '12:27', '12:28', '12:28', '12:28', '12:29', '12:29', '12:29', '12:29', '12:29', '12:30', '12:30', '12:30', '12:30', '12:30', '12:30', '12:30', '12:30', '12:31', '12:31', '12:31', '12:31', '12:31', '12:31', '12:31', '12:31', '12:31', '12:31', '12:31', '12:30', '12:30', '12:30', '12:30', '12:30', '12:30', '12:30', '12:30', '12:30', '12:29', '12:29', '12:29', '12:29', '12:29', '12:28', '12:28', '12:28', '12:28', '12:28', '12:27', '12:27', '12:27', '12:27', '12:26', '12:26', '12:26', '12:25', '12:25', '12:25', '12:25', '12:24', '12:24', '12:24', '12:23', '12:23', '12:23', '12:22', '12:22', '13:22', '13:22', '13:21', '13:21', '13:21', '13:20', '13:20', '13:20', '13:20', '13:19', '13:19', '13:19', '13:18', '13:18', '13:18', '13:18', '13:17', '13:17', '13:17', '13:17', '13:16', '13:16', '13:16', '13:16', '13:15', '13:15', '13:15', '13:15', '13:15', '13:14', '13:14', '13:14', '13:14', '13:14', '13:14', '13:14', '13:14', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:13', '13:14', '13:14', '13:14', '13:14', '13:14', '13:14', '13:14', '13:15', '13:15', '13:15', '13:15', '13:15', '13:15', '13:16', '13:16', '13:16', '13:16', '13:16', '13:17', '13:17', '13:17', '13:17', '13:17', '13:18', '13:18', '13:18', '13:18', '13:19', '13:19', '13:19', '13:19', '13:19', '13:20', '13:20', '13:20', '13:20', '13:20', '13:21', '13:21', '13:21', '13:21', '13:21', '13:21', '13:22', '13:22', '13:22', '13:22', '13:22', '13:22', '13:22', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:23', '13:22', '13:22', '13:22', '13:22', '13:22', '13:22', '13:22', '13:21', '13:21', '13:21', '13:21', '13:21', '13:20', '13:20', '13:20', '13:20', '13:19', '13:19', '13:19', '13:19', '13:18', '13:18', '13:18', '13:17', '13:17', '13:17', '13:17', '13:16', '13:16', '13:16', '13:15', '13:15', '13:15', '13:14', '13:14', '13:14', '13:13', '13:13', '13:12', '13:12', '13:12', '13:11', '13:11', '13:11', '13:10', '13:10', '13:10', '13:09', '13:09', '13:09', '13:08', '13:08', '13:08', '13:07', '13:07', '13:07', '13:06', '13:06', '13:06', '13:05', '13:05', '13:05', '13:04', '13:04', '13:04', '13:04', '13:03', '13:03', '13:03', '13:03', '13:02', '13:02', '13:02', '13:02', '13:01', '13:01', '13:01', '13:01', '13:01', '13:01', '13:01', '13:00', '13:00', '13:00', '13:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:00', '12:01', '12:01', '12:01', '12:01', '12:01', '12:01', '12:01', '12:02', '12:02', '12:02', '12:02', '12:03', '12:03', '12:03', '12:03', '12:04', '12:04', '12:04', '12:05', '12:05', '12:05', '12:06', '12:06', '12:07', '12:07', '12:07', '12:08', '12:08', '12:09', '12:09', '12:10', '12:10', '12:11', '12:11', '12:12', '12:12', '12:13', '12:13', '12:14', '12:14', '12:15', '12:15', '12:16', '12:16', '12:16', '12:17', '12:17', '12:18', '12:18', '12:19', '12:19'];
 
+
+var day_lengths = [5.267, 5.317, 5.35, 5.383, 5.433, 5.5, 5.567, 5.617, 5.667, 5.733, 5.8, 5.867, 5.95, 6.017, 6.083, 6.15, 6.233, 6.317, 6.417, 6.483, 6.567, 6.65, 6.733, 6.833, 6.917, 7.0, 7.083, 7.183, 7.267, 7.367, 7.45, 7.55, 7.65, 7.75, 7.833, 7.933, 8.033, 8.133, 8.233, 8.333, 8.417, 8.517, 8.617, 8.717, 8.817, 8.917, 9.017, 9.1, 9.2, 9.3, 9.417, 9.517, 9.617, 9.717, 9.817, 9.9, 10.0, 10.1, 10.217, 10.317, 10.417, 10.5, 10.6, 10.717, 10.817, 10.917, 11.0, 11.117, 11.217, 11.317, 11.4, 11.517, 11.617, 11.717, 11.817, 11.917, 12.017, 12.1, 12.217, 12.317, 12.417, 12.517, 12.617, 12.717, 12.8, 12.917, 13.017, 13.117, 13.217, 13.317, 13.417, 13.517, 13.617, 13.717, 13.817, 13.917, 14.017, 14.117, 14.217, 14.317, 14.417, 14.517, 14.633, 14.717, 14.817, 14.917, 15.033, 15.117, 15.217, 15.317, 15.417, 15.533, 15.617, 15.717, 15.817, 15.917, 16.017, 16.1, 16.217, 16.317, 16.417, 16.517, 16.617, 16.717, 16.8, 16.9, 17.0, 17.1, 17.2, 17.3, 17.367, 17.467, 17.567, 17.667, 17.75, 17.833, 17.933, 18.033, 18.1, 18.2, 18.283, 18.367, 18.45, 18.533, 18.617, 18.683, 18.783, 18.85, 18.933, 19.0, 19.067, 19.133, 19.2, 19.283, 19.317, 19.383, 19.433, 19.5, 19.55, 19.583, 19.65, 19.683, 19.717, 19.733, 19.767, 19.8, 19.817, 19.85, 19.85, 19.867, 19.867, 19.883, 19.883, 19.867, 19.85, 19.833, 19.817, 19.8, 19.783, 19.75, 19.717, 19.667, 19.633, 19.583, 19.55, 19.483, 19.45, 19.383, 19.333, 19.267, 19.2, 19.133, 19.067, 18.983, 18.917, 18.85, 18.783, 18.7, 18.617, 18.533, 18.467, 18.367, 18.3, 18.2, 18.117, 18.033, 17.933, 17.85, 17.767, 17.667, 17.567, 17.483, 17.4, 17.3, 17.2, 17.117, 17.017, 16.917, 16.817, 16.717, 16.633, 16.533, 16.433, 16.333, 16.25, 16.133, 16.033, 15.933, 15.85, 15.75, 15.65, 15.567, 15.45, 15.35, 15.25, 15.167, 15.05, 14.95, 14.867, 14.767, 14.65, 14.567, 14.467, 14.367, 14.267, 14.167, 14.067, 13.983, 13.867, 13.767, 13.683, 13.567, 13.483, 13.383, 13.267, 13.183, 13.083, 13.0, 12.883, 12.783, 12.7, 12.583, 12.5, 12.4, 12.283, 12.2, 12.1, 12.0, 11.9, 11.8, 11.717, 11.6, 11.5, 11.417, 11.3, 11.2, 11.117, 11.017, 10.9, 10.817, 10.717, 10.617, 10.533, 10.417, 10.317, 10.233, 10.133, 10.033, 9.917, 9.833, 9.733, 9.633, 9.533, 9.45, 9.35, 9.233, 9.133, 9.033, 8.933, 8.85, 8.75, 8.65, 8.55, 8.45, 8.35, 8.267, 8.167, 8.083, 7.983, 7.883, 7.783, 7.7, 7.6, 7.5, 7.4, 7.317, 7.233, 7.15, 7.05, 6.967, 6.867, 6.783, 6.717, 6.617, 6.533, 6.45, 6.383, 6.3, 6.2, 6.15, 6.067, 5.983, 5.917, 5.85, 5.783, 5.717, 5.667, 5.583, 5.533, 5.483, 5.433, 5.383, 5.333, 5.3, 5.25, 5.217, 5.183, 5.167, 5.117, 5.1, 5.083, 5.067, 5.05, 5.067, 5.05, 5.05, 5.05, 5.067, 5.083, 5.1, 5.117, 5.133, 5.15, 5.2, 5.217];
+
 var lists = [astro_starts, nautical_starts, civil_starts, sunrises, sunsets, civil_ends, nautical_ends, astro_ends, solar_noons];
 
 function solar_elevation(latitude) {
@@ -145,7 +149,7 @@ function solar_elevation(latitude) {
 }
 
 function solar_noon_difference(day) {
-  var time = solar_noons[day-1];
+  var time = solar_noons[day];
   var minutes = time.slice(time.length-2);
   var diff = parseInt(minutes);
   diff = diff/60;
@@ -170,6 +174,24 @@ function time_to_angle(day, time) {
 
 }
 
+function radians(angle) {
+    return angle * Math.PI/180;
+}
+
+
+function elevation_daylength_ratios() {
+   var ratios = [];
+   var trig_ratios = [];
+   for (var i = 0; i<365; i++) {
+      ratios.push(parseFloat(real_angles[i])/day_lengths[i]);
+      rad = radians(parseFloat(real_angles[i]));
+      rel_angle = real_angles[i]/90;
+      rel_sine = Math.sin(rad)/Math.sin(radians(90))
+      relative_power = parseFloat(real_angles[i])*(rel_sine/rel_angle);
+      trig_ratios.push(relative_power/day_lengths[i]);
+   }
+   return [ratios, trig_ratios];
+}
 
 var today = new Date();
 var month = today.getMonth();
@@ -179,6 +201,8 @@ var day_of_year = month_starts[month]+date-2;
 var day_string = date+". "+months[month]+"ta " + year;
 
 time_to_angle(day_of_year, sunrises[day_of_year]);
+
+const [ratios, t_ratios] = elevation_daylength_ratios();
 
 var month_ind = 0;
 var xlabels = [];
@@ -197,16 +221,18 @@ for (var i = 0; i<365; i++) {
 var solarangles = {
  x: xlabels,
  y: real_angles,
+ yaxis: 'y1',
  hoverlabel: {namelength :-1},
  hoverinfo: "x: y",
- name: 'Auringon kulma'
-//  type: 'scatter'
+ name: 'Auringon kulma',
+ type: 'scatter'
 
 };
 
 var todaysmarker = {
   x: [xlabels[day_of_year]],
   y: [real_angles[day_of_year]],
+  yaxis: 'y1',
   hoverlabel: {namelength :-1},
   marker: {
   size: 15,
@@ -220,21 +246,43 @@ var todaysmarker = {
   name: 'Auringon kulma tänään (' + day_string + ")"
 };
 
+var lengthandangle = {
+   x: xlabels,
+   y: ratios,
+   hoverlabel: {namelength :-1},
+   yaxis: 'y2',
+   hoverinfo: "x: y",
+   type: 'scatter',
+   name: "Auringonkulman suhde päivän pituuteen"
+};
+
+var lengthandangle_t = {
+   x: xlabels,
+   y: t_ratios,
+   hoverlabel: {namelength :-1},
+   yaxis: 'y2',
+   hoverinfo: "x: y",
+   type: 'scatter',
+   name: "Auringon voimakkuuden suhde päivän pituuteen"
+};
+
+
 var layout = {
-  xaxis: {
-     autorange: false,
-     tickvals: xlabels,
-     type: 'date'
-   },
    yaxis: {
-   autorange: true,
-   type: 'linear'
- }
+   title: 'auringonkulma',
+   overlaying: 'y2',
+   range: [0, 55],
+   rangemode: 'tozero'
+ },
+   yaxis2: {
+   side: 'right',
+   range: [0, 4.4]
+  }
 };
 
 var config = {responsive: true}
 
-var data = [solarangles, todaysmarker];
+var data = [solarangles, todaysmarker, lengthandangle, lengthandangle_t];
 
 
 let colist = ["#000000", "#42324a", "#554f73", "#978fc2", "#dedaf5", "#978fc2", "#554f73", "#42324a", "#000000"];
@@ -242,8 +290,9 @@ let colist = ["#000000", "#42324a", "#554f73", "#978fc2", "#dedaf5", "#978fc2", 
 function day_to_daystr(day) {
   var month = 1;
   var day2 = 1;
+  day = day + 1;
   for (var i=0; i<month_starts.length; i++) {
-    if (day < month_starts[i]) {
+    if (day < (month_starts[i])) {
       month = i;
       day2 = day-month_starts[i-1]+1;
       break;
@@ -257,21 +306,39 @@ function day_to_daystr(day) {
   return daystr;
 }
 
+function daystr_to_day(day) {
+  var splitstr = day.split(".", 2)
+  var month1 = parseInt(splitstr[1]);
+  var day1 = parseInt(splitstr[0]);
+  var first_day_of_month = month_starts[month1-1];
+  var days_from_start = day1-2;
+  var daynum = first_day_of_month + days_from_start;
+  return daynum;
+}
+
 
 function get_datalist(day) {
   var datalist = [];
   var timelist = [];
   for (var i=0; i<lists.length-1; i++) {
     var curr_list = lists[i];
-    var last_angle = time_to_angle(day, curr_list[day-1]);
+    var last_angle = time_to_angle(day, curr_list[day]);
     datalist.push(last_angle);
-    timelist.push(curr_list[day-1]);
+    timelist.push(curr_list[day]);
   }
   datalist.push(0);
-  timelist.push(lists[lists.length-1][day-1]);
+  timelist.push(lists[lists.length-1][day]);
   var daystr = day_to_daystr(day);
   return [timelist, datalist, daystr];
 }
+
+function dayhm(length) {
+   var hours = Math.floor(length);
+   var minutes = (length % 1) * 60;
+   var daystr = hours.toString() + "h " + minutes.toFixed(0).toString() + "min";
+   return daystr;
+}
+
 // https://www.scriptol.com/html5/canvas/circle.php
 function pie(ctx, w, h, datalist, colist, timelist, day)
 {
@@ -325,6 +392,9 @@ function pie(ctx, w, h, datalist, colist, timelist, day)
     var dx2 = centerx + tradius * Math.cos(sn_angle+Math.PI);
     var dy2 = centery + tradius * Math.sin(sn_angle+Math.PI);
     ctx.fillText(day, dx2, dy2);
+    ctx.font = "12px Arial";
+    var dayn = daystr_to_day(day);
+    ctx.fillText(dayhm(day_lengths[dayn]), dx2+2, dy2+20)
 }
 
 var canvas = document.getElementById("daycanvas");
@@ -346,12 +416,14 @@ function daypie(times, datalist, colist, day) {
   pie(ctx, canvas.width, canvas.height, datalist, colist, times, day);
 }
 
-var times_data = get_datalist(day_of_year+1);
+
+var times_data = get_datalist(day_of_year);
 daypie(times_data[0], times_data[1], colist, times_data[2]);
 
-Plotly.newPlot('plot', data, config)
+Plotly.newPlot('plot', data, layout, {responsive: true})
 .then(gd => {
   gd.on('plotly_hover', d => {
+    
     var xAxis = gd._fullLayout.xaxis;
     var yAxis = gd._fullLayout.yaxis;
     var marginLeft = gd._fullLayout.margin.l;
@@ -365,7 +437,7 @@ Plotly.newPlot('plot', data, config)
 
 
 
-document.getElementById('blaa').innerHTML = day_string + ": auringon kulma " + real_angles[day_of_year] + " astetta.";
+document.getElementById('blaa').innerHTML = day_string + ": auringon kulma " + real_angles[day_of_year] + " astetta. Päivän pituus " + dayhm(day_lengths[day_of_year]) + ".<br> Auringonkulman suhde päivän pituuteen: " + ratios[day_of_year].toFixed(3) + ". Auringon voimakkuuden suhde päivän pituuteen: " + t_ratios[day_of_year].toFixed(3) +".";
 
 </script>
 </body>
